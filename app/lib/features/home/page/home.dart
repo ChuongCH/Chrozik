@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import '../../../navigation/page_templates/fade_page.dart';
@@ -7,11 +9,15 @@ import '../../common/atom/network_image_atom.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  static FadePage page() => FadePage(
-        child: const HomePage(),
-        name: RootRoute.home.name,
-        key: const ValueKey(RootRoute.home),
-      );
+  static FadePage page() {
+    log('Going ${RootRoute.home.name}');
+
+    return FadePage(
+      child: const HomePage(),
+      name: RootRoute.home.name,
+      key: const ValueKey(RootRoute.home),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

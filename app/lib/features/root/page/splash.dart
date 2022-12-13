@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -9,11 +11,15 @@ import '../presenter/splash/splash_presenter.dart';
 class SplashPage extends ConsumerStatefulWidget {
   const SplashPage({super.key});
 
-  static FadePage page() => FadePage(
-        child: const SplashPage(),
-        name: RootRoute.splash.name,
-        key: const ValueKey(RootRoute.splash),
-      );
+  static FadePage page() {
+    log('Going ${RootRoute.splash.name}');
+
+    return FadePage(
+      child: const SplashPage(),
+      name: RootRoute.splash.name,
+      key: const ValueKey(RootRoute.splash),
+    );
+  }
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _SplashPageState();
