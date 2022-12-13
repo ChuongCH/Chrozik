@@ -14,6 +14,7 @@ dependencies:
       sdk: flutter
    flutter_launcher_icons: ^0.11.0
    flutter_riverpod: ^2.1.1
+   flutter_svg: ^1.1.6
    freezed_annotation: ^2.2.0
    json_annotation: ^4.7.0
    riverpod_annotation: ^1.0.6
@@ -34,6 +35,7 @@ flutter:
 
    assets:
       - assets/images/
+      - assets/svgs/
 
 flavorizr:
    app:
@@ -41,19 +43,19 @@ flavorizr:
          flavorDimensions: "default"
 
    flavors:
-      develop:
+      development:
          app:
-            name: "Chrozik Develop"
+            name: "Chrozik dev"
          android:
-            applicationId: "com.chuong.chrozik.develop"
+            applicationId: "com.chuong.chrozik.development"
             firebase:
                config: "android/app/firebase/google-services_dev.json"
          ios:
-            bundleId: "com.chuong.chrozik.develop"
+            bundleId: "com.chuong.chrozik.development"
             firebase:
                config: "android/app/firebase/google-services_dev.json"
 
-      release:
+      production:
          app:
             name: "Chrozik"
          android:

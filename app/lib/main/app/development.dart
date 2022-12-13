@@ -8,7 +8,7 @@ import '../firebase/firebase_options_dev.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  F.appFlavor = Flavor.develop;
+  Flavor.currentFlavor = Flavor.development;
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

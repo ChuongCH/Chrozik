@@ -1,0 +1,47 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch Develop",
+			"request": "launch",
+			"type": "dart",
+			"program": "lib/main/app/development.dart",
+			"args": [
+				"--flavor",
+				"development",
+				"--target",
+				"lib/main/app/development.dart"
+			]
+			// "toolArgs": [
+			// 	"--dart-define",
+			// 	"DEBUG_MODE=false",
+			// 	"--dart-define",
+			// 	"TEST_HELPER_ENABLED=false"
+			// ]
+			// flutter run --flavor development --target lib/main/app/development.dart
+		},
+		{
+			"name": "app",
+			"cwd": "app",
+			"request": "launch",
+			"type": "dart"
+		},
+		{
+			"name": "app (profile mode)",
+			"cwd": "app",
+			"request": "launch",
+			"type": "dart",
+			"flutterMode": "profile"
+		},
+		{
+			"name": "app (release mode)",
+			"cwd": "app",
+			"request": "launch",
+			"type": "dart",
+			"flutterMode": "release"
+		}
+	]
+}

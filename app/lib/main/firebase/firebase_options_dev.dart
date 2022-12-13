@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDkYCZJAiaeqNGak60Bk0LNGMJgcy70eWI',
-    appId: '1:169810590524:android:1aa1af9f4a22027796fc39',
+    appId: '1:169810590524:android:33a75a44644b471c96fc39',
     messagingSenderId: '169810590524',
     projectId: 'chrozik-e3e95',
     storageBucket: 'chrozik-e3e95.appspot.com',
@@ -59,14 +59,12 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDy_KDXdNbpq3H2oCEbr0aEybp0lQzoE3M',
-    appId: '1:169810590524:ios:9d40505e5841170596fc39',
+    appId: '1:169810590524:ios:8588f3eeb5cb4e2196fc39',
     messagingSenderId: '169810590524',
     projectId: 'chrozik-e3e95',
     storageBucket: 'chrozik-e3e95.appspot.com',
-    androidClientId:
-        '169810590524-eic1oeooftmnaav0bn4pdr9omkdhules.apps.googleusercontent.com',
-    iosClientId:
-        '169810590524-8bbt3beanth1se6gmnvm2sm5e62ifuqh.apps.googleusercontent.com',
-    iosBundleId: 'com.chuong.chrozik.develop',
+    androidClientId: '169810590524-eic1oeooftmnaav0bn4pdr9omkdhules.apps.googleusercontent.com',
+    iosClientId: '169810590524-65c43fua9toknth57417ra5omv59vlg0.apps.googleusercontent.com',
+    iosBundleId: 'com.chuong.chrozik.development',
   );
 }

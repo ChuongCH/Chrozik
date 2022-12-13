@@ -4,18 +4,19 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../ui/root/pages/app.dart';
+import '../features/root/page/app.dart';
 
 void bootstrap() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  log('Going full screen.');
+  log('Going full screen');
   SystemChrome.setEnabledSystemUIMode(
     SystemUiMode.edgeToEdge,
   );
 
-  log('Set up crashlytic.');
+  log('Set up crashlytic');
   final crashlytic = FirebaseCrashlytics.instance;
   FlutterError.onError = (details) {
     log(
@@ -41,5 +42,9 @@ void bootstrap() {
     return true;
   };
 
-  runApp(const App());
+  runApp(
+    const ProviderScope(
+      child: App(),
+    ),
+  );
 }

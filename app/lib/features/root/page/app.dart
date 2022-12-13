@@ -15,11 +15,11 @@ class App extends ConsumerWidget {
     final parser = ref.read(rootRouterParserProvider);
 
     return MaterialApp.router(
-      title: Config.appTitle.getValue(),
+      title: Config.appTitle.value,
       routerDelegate: router,
       routeInformationParser: parser,
       backButtonDispatcher: bbd,
-      debugShowCheckedModeBanner: Flavor.currentFlavor == Flavor.develop,
+      debugShowCheckedModeBanner: Flavor.currentFlavor == Flavor.development,
     );
   }
 }

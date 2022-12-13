@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../main/constant/asset_path.dart';
+import '../../../navigation/page_templates/fade_page.dart';
 import '../../../navigation/paths/root_route.dart';
-import '../../../navigation/route_pages/fade_page.dart';
 import '../presenter/splash/splash_presenter.dart';
 
 class SplashPage extends ConsumerStatefulWidget {

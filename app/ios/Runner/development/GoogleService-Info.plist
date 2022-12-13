@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "169810590524",
+    "project_id": "chrozik-e3e95",
+    "storage_bucket": "chrozik-e3e95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169810590524:android:33a75a44644b471c96fc39",
+        "android_client_info": {
+          "package_name": "com.chuong.chrozik.development"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "169810590524-17lseib9qtrgq56en6cf9kr7342fi2cn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkYCZJAiaeqNGak60Bk0LNGMJgcy70eWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "169810590524-17lseib9qtrgq56en6cf9kr7342fi2cn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "169810590524-576tc6dtss9arlm67lg38khb4c3996oj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.chuong.chrozik.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
