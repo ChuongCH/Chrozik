@@ -1,5 +1,5 @@
-import 'dart:developer';
-
+import 'package:debug_logger/debug_logger/debug_logger.dart';
+import 'package:debug_logger/wrapper.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -11,27 +11,27 @@ import '../features/root/page/app.dart';
 void bootstrap() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  log('Going full screen');
+  debugLogger.d('Going full screen');
   SystemChrome.setEnabledSystemUIMode(
     SystemUiMode.edgeToEdge,
   );
 
-  log('Set up crashlytic');
+  debugLogger.d('Going landscape mode');
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
+  ]);
+
+  debugLogger.d('Set up crashlytic');
   final crashlytic = FirebaseCrashlytics.instance;
   FlutterError.onError = (details) {
-    log(
-      details.exception.toString(),
-      stackTrace: details.stack,
-    );
+    debugLogger.d(details.exception);
 
     crashlytic.recordFlutterFatalError(details);
   };
 
   PlatformDispatcher.instance.onError = (exception, stackTrace) {
-    log(
-      exception.toString(),
-      stackTrace: stackTrace,
-    );
+    debugLogger.d(exception);
 
     FirebaseCrashlytics.instance.recordError(
       exception,
@@ -43,8 +43,8 @@ void bootstrap() {
   };
 
   runApp(
-    const ProviderScope(
-      child: App(),
+    const DebugLoggerWrapper(
+      child: ProviderScope(child: App()),
     ),
   );
 }

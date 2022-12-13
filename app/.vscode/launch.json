@@ -14,14 +14,9 @@
 				"development",
 				"--target",
 				"lib/main/app/development.dart"
-			]
-			// "toolArgs": [
-			// 	"--dart-define",
-			// 	"DEBUG_MODE=false",
-			// 	"--dart-define",
-			// 	"TEST_HELPER_ENABLED=false"
-			// ]
-			// flutter run --flavor development --target lib/main/app/development.dart
+			],
+			"toolArgs": ["--dart-define", "DEBUG_LOGGER_ENABLED=true"]
+			// flutter run --flavor development --target lib/main/app/development.dart --dart-define DEBUG_LOGGER_ENABLED=true
 		},
 		{
 			"name": "app",

@@ -1,18 +1,17 @@
-import 'dart:developer';
-
+import 'package:debug_logger/debug_logger/debug_logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../main/constant/asset_path.dart';
 import '../../../navigation/page_templates/fade_page.dart';
 import '../../../navigation/paths/root_route.dart';
+import '../../common/atom/chrozik_atom.dart';
 import '../presenter/splash/splash_presenter.dart';
 
 class SplashPage extends ConsumerStatefulWidget {
   const SplashPage({super.key});
 
   static FadePage page() {
-    log('Going ${RootRoute.splash.name}');
+    debugLogger.d('Going ${RootRoute.splash.name}');
 
     return FadePage(
       child: const SplashPage(),
@@ -31,27 +30,25 @@ class _SplashPageState extends ConsumerState<SplashPage>
   void initState() {
     super.initState();
 
-    presenter = ref.read(splashPagePresenterProvider);
+    presenter = ref.read(splashPresenterProvider);
 
     presenter
       ..controller = AnimationController(
         vsync: this,
-        value: 0,
+        upperBound: 1.5,
         duration: const Duration(milliseconds: 1500),
       )
       ..initialize();
   }
 
-  late SplashPagePresenter presenter;
+  late SplashPresenter presenter;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ColoredBox(
-        color: Colors.white,
-        child: Opacity(
-          opacity: presenter.controller.value,
-          child: Image.asset(AssetPath.pngAppLogo),
+    return const Scaffold(
+      body: Center(
+        child: ChrozikAtom(
+          height: 200,
         ),
       ),
     );

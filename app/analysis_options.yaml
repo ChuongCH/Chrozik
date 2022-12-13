@@ -20,5 +20,6 @@ linter:
       public_member_api_docs: false
       no_default_cases: false
       always_use_package_imports: false
+      unnecessary_string_escapes: false
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

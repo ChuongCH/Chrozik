@@ -29,15 +29,14 @@ class _SystemHash {
   }
 }
 
-String $splashPagePresenterHash() =>
-    r'7f980a3e8a21ff333684872685219c2105c4a39c';
+String $splashPresenterHash() => r'c7ffd78ed60b92bde6adfa1878f5d31bf283c75d';
 
-/// See also [splashPagePresenter].
-final splashPagePresenterProvider = AutoDisposeProvider<SplashPagePresenter>(
-  splashPagePresenter,
-  name: r'splashPagePresenterProvider',
+/// See also [splashPresenter].
+final splashPresenterProvider = AutoDisposeProvider<SplashPresenter>(
+  splashPresenter,
+  name: r'splashPresenterProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $splashPagePresenterHash,
+      : $splashPresenterHash,
 );
-typedef SplashPagePresenterRef = AutoDisposeProviderRef<SplashPagePresenter>;
+typedef SplashPresenterRef = AutoDisposeProviderRef<SplashPresenter>;
