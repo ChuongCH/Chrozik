@@ -21,5 +21,6 @@ linter:
       no_default_cases: false
       always_use_package_imports: false
       unnecessary_string_escapes: false
+      avoid_positional_boolean_parameters: false
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

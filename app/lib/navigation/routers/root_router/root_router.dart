@@ -10,18 +10,17 @@ import 'root_route_info.dart';
 
 class RootRouter extends RouterDelegate<RootRouteInfo>
     with PopNavigatorRouterDelegateMixin, ChangeNotifier {
-  RootRouter({
-    required this.ref,
-    required this.navigatorKey,
-  }) {
+  RootRouter({required this.ref}) {
     ref.listen(
       rootRouterPresenterProvider,
-      (previous, next) => notifyListeners(),
+      (previous, next) {
+        notifyListeners();
+      },
     );
   }
 
   @override
-  final GlobalKey<NavigatorState> navigatorKey;
+  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
   final Ref ref;
 

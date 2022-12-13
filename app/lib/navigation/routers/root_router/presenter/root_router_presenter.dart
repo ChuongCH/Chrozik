@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../model/root_router_state.dart';
@@ -35,17 +36,12 @@ class RootRouterPresenter extends _$RootRouterPresenter {
   }
 }
 
-@riverpod
+@Riverpod(keepAlive: true)
 RootRouter rootRouter(RootRouterRef ref) {
-  final navigatorKey = GlobalKey<NavigatorState>();
-
-  return RootRouter(
-    ref: ref,
-    navigatorKey: navigatorKey,
-  );
+  return RootRouter(ref: ref);
 }
 
-@riverpod
+@Riverpod(keepAlive: true)
 BackButtonDispatcher rootRouterBbd(RootRouterBbdRef ref) {
   return RootBackButtonDispatcher();
 }

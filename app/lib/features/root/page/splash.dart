@@ -30,26 +30,14 @@ class _SplashPageState extends ConsumerState<SplashPage>
   void initState() {
     super.initState();
 
-    presenter = ref.read(splashPresenterProvider);
-
-    presenter
-      ..controller = AnimationController(
-        vsync: this,
-        upperBound: 1.5,
-        duration: const Duration(milliseconds: 1500),
-      )
-      ..initialize();
+    ref.read(splashPresenterProvider).initialize();
   }
-
-  late SplashPresenter presenter;
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: ChrozikAtom(
-          height: 200,
-        ),
+        child: ChrozikAtom(height: 200),
       ),
     );
   }

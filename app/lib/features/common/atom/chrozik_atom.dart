@@ -5,8 +5,8 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class ChrozikAtom extends StatefulWidget {
-  const ChrozikAtom({
+class ChrozikAtom extends StatelessWidget {
+  ChrozikAtom({
     super.key,
     this.width,
     this.height,
@@ -15,32 +15,30 @@ class ChrozikAtom extends StatefulWidget {
   final double? width;
   final double? height;
 
-  @override
-  ChrozikAtomState createState() => ChrozikAtomState();
-}
-
-class ChrozikAtomState extends State<ChrozikAtom> {
   final _key = UniqueKey();
 
   @override
   Widget build(BuildContext context) {
-    if (kIsWeb || (!Platform.isAndroid && !Platform.isIOS)) {
-      debugPrint("SVGator's Flutter animations run only on Android or iOS!");
+    try {
+      if (kIsWeb || (!Platform.isAndroid && !Platform.isIOS)) {
+        debugPrint("SVGator's Flutter animations run only on Android or iOS!");
+        throw Error();
+      }
 
+      return SizedBox(
+        width: width,
+        height: height,
+        child: WebView(
+          key: _key,
+          javascriptMode: JavascriptMode.unrestricted,
+          initialUrl: 'about:blank',
+          backgroundColor: Colors.transparent,
+          onWebViewCreated: _loadHtmlFromAssets,
+        ),
+      );
+    } catch (err) {
       return const SizedBox.shrink();
     }
-
-    return SizedBox(
-      width: widget.width,
-      height: widget.height,
-      child: WebView(
-        backgroundColor: Colors.transparent,
-        key: _key,
-        javascriptMode: JavascriptMode.unrestricted,
-        initialUrl: 'about:blank',
-        onWebViewCreated: _loadHtmlFromAssets,
-      ),
-    );
   }
 
   Future<void> _loadHtmlFromAssets(WebViewController? webViewController) async {

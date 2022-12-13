@@ -48,26 +48,26 @@ abstract class _$RootRouterPresenter extends Notifier<RootRouterState> {
   RootRouterState build();
 }
 
-String $rootRouterHash() => r'f01b78962063db9f03e879e9880773563d599c65';
+String $rootRouterHash() => r'fc6376e0c5b1693771a994c70c0f283b823d97c5';
 
 /// See also [rootRouter].
-final rootRouterProvider = AutoDisposeProvider<RootRouter>(
+final rootRouterProvider = Provider<RootRouter>(
   rootRouter,
   name: r'rootRouterProvider',
   debugGetCreateSourceHash:
       const bool.fromEnvironment('dart.vm.product') ? null : $rootRouterHash,
 );
-typedef RootRouterRef = AutoDisposeProviderRef<RootRouter>;
-String $rootRouterBbdHash() => r'16185fe1fbb65ed400a2931ae60806219390b343';
+typedef RootRouterRef = ProviderRef<RootRouter>;
+String $rootRouterBbdHash() => r'b47623e8717b024852548aff4a417c1b188b9005';
 
 /// See also [rootRouterBbd].
-final rootRouterBbdProvider = AutoDisposeProvider<BackButtonDispatcher>(
+final rootRouterBbdProvider = Provider<BackButtonDispatcher>(
   rootRouterBbd,
   name: r'rootRouterBbdProvider',
   debugGetCreateSourceHash:
       const bool.fromEnvironment('dart.vm.product') ? null : $rootRouterBbdHash,
 );
-typedef RootRouterBbdRef = AutoDisposeProviderRef<BackButtonDispatcher>;
+typedef RootRouterBbdRef = ProviderRef<BackButtonDispatcher>;
 String $rootRouterParserHash() => r'b015316b15f994714369f1bd020ce9bda483c084';
 
 /// See also [rootRouterParser].
