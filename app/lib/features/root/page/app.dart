@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../main/config/config.dart';
 import '../../../main/config/flavors.dart';
 import '../../../navigation/routers/root_router/presenter/root_router_presenter.dart';
+import '../../../theme/app_theme.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});
@@ -19,6 +20,8 @@ class App extends ConsumerWidget {
       routerDelegate: router,
       routeInformationParser: parser,
       backButtonDispatcher: bbd,
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
       debugShowCheckedModeBanner: Flavor.currentFlavor == Flavor.development,
     );
   }

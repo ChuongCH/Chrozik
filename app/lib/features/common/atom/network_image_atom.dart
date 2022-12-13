@@ -1,5 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../main/constant/asset_path.dart';
 
@@ -21,29 +21,38 @@ class NetworkImageAtom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fallbackImage = SvgPicture.asset(
-      AssetPath.svgNoImage,
+    final fallbackImage = Image.asset(
+      AssetPath.pngNoImage,
       width: width,
       height: height,
       fit: boxFit ?? BoxFit.contain,
     );
 
-    return Image.network(
-      url,
+    return CachedNetworkImage(
+      imageUrl: url,
       fit: boxFit,
       width: width,
       height: height,
-      headers: headers,
-      errorBuilder: (context, error, stackTrace) {
-        return fallbackImage;
-      },
-      loadingBuilder: (context, child, loadingProgress) {
+      fadeInCurve: Curves.easeInOut,
+      fadeInDuration: const Duration(seconds: 1),
+      progressIndicatorBuilder: (context, url, progress) {
         return Container(
           width: width,
           height: height,
           alignment: Alignment.center,
-          child: const CircularProgressIndicator(),
+          color: Colors.black.withOpacity(.3),
+          child: SizedBox(
+            width: width != null ? width! * .4 : null,
+            height: height != null ? height! * .4 : null,
+            child: CircularProgressIndicator(
+              value: progress.progress,
+              strokeWidth: 10,
+            ),
+          ),
         );
+      },
+      errorWidget: (context, url, error) {
+        return Image.asset(AssetPath.pngNoImage);
       },
     );
   }

@@ -14,7 +14,6 @@ class AppTheme {
       .5,
     ),
     colorScheme: ThemeData.light().colorScheme.copyWith(
-          brightness: Brightness.light,
           primary: AppColors.primary.light,
           secondary: AppColors.secondary.light,
         ),
@@ -22,6 +21,11 @@ class AppTheme {
       style: TextButton.styleFrom(
         padding: const EdgeInsets.all(17),
       ),
+    ),
+    appBarTheme: AppBarTheme(
+      foregroundColor: Colors.white,
+      backgroundColor: AppColors.primary.light,
+      elevation: 0,
     ),
     // tooltipTheme: TooltipThemeData(
     //   decoration: BoxDecoration(
@@ -33,11 +37,6 @@ class AppTheme {
     //     fontSize: 14,
     //   ),
     //   verticalOffset: 50,
-    // ),
-    // appBarTheme: AppBarTheme(
-    //   foregroundColor: Colors.black,
-    //   backgroundColor: Colors.grey.shade50,
-    //   elevation: 0,
     // ),
     // drawerTheme: const DrawerThemeData(
     //   backgroundColor: Color.fromRGBO(240, 240, 240, 1),

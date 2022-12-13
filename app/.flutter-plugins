@@ -19,6 +19,7 @@ shared_preferences_linux=/Users/closvil/apps/flutter/.pub-cache/hosted/pub.dartl
 shared_preferences_macos=/Users/closvil/apps/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-2.0.4/
 shared_preferences_web=/Users/closvil/apps/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_web-2.0.4/
 shared_preferences_windows=/Users/closvil/apps/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_windows-2.1.1/
+sqflite=/Users/closvil/apps/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.2.2/
 webview_flutter=/Users/closvil/apps/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-3.0.4/
 webview_flutter_android=/Users/closvil/apps/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter_android-2.10.4/
 webview_flutter_wkwebview=/Users/closvil/apps/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter_wkwebview-2.9.5/
